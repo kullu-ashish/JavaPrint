@@ -43,7 +43,7 @@ aws s3 cp runJavaProgram.sh s3://<You Bucket, say abc123>
 2. Enter a name for the job, for example: script_test.
 3. Choose the latest fetch_and_run job definition.
 4. For Job Queue, choose a queue, for example: first-run-job-queue.
-5. For Command, enter runJavaProgram.sh, <Another S3 bucket which you want to pass to Java program> , <file in S3 bucket>.
+5. For Command, enter runJavaProgram.sh, \<Another S3 bucket which you want to pass to Java program\> , \<file in S3 bucket\>.
 6. Choose Validate Command.
 7.Enter the following environment variables and then choose Submit job.
 
