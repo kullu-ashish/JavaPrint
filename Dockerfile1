@@ -1,0 +1,18 @@
+FROM javaprint
+
+RUN apt-get update && \
+    apt-get -y install unzip && \
+    apt-get -y install less
+
+COPY awscliv2.zip /
+
+WORKDIR /
+
+RUN unzip awscliv2.zip
+
+RUN ./aws/install
+
+ADD fetch_and_run.sh /usr/local/bin/fetch_and_run.sh
+WORKDIR /tmp
+USER nobody
+ENTRYPOINT ["/usr/local/bin/fetch_and_run.sh"]
