@@ -45,7 +45,7 @@ aws s3 cp runJavaProgram.sh s3://<You Bucket, say abc123>
 4. For Job Queue, choose a queue, for example: first-run-job-queue.
 5. For Command, enter runJavaProgram.sh, \<Another S3 bucket which you want to pass to Java program\> , \<file in S3 bucket\>.
 6. Choose Validate Command.
-7.Enter the following environment variables and then choose Submit job.
+7. Enter the following environment variables and then choose Submit job.
 
     Key=BATCH_FILE_TYPE, Value=script
     Key=BATCH_FILE_S3_URL, Value=s3://abc123/runJavaProgram.sh. Don’t forget to use the correct URL for your file.
