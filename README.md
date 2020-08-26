@@ -8,19 +8,28 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 
 
 javac PrintCommandLineArguments.java 
+
 jar cvfe sample.jar PrintCommandLineArguments  PrintCommandLineArguments.class
 
 #Create docker files
 
 
 docker build -t javaprint .
+
 aws ecr get-login <AWS A/c ID>.dkr.ecr.ap-southeast-2.amazonaws.com
+
 docker image ls --> Check the image ID of javaprint say its abcde
+
 docker tag abcde <AWS a/c ID>.dkr.ecr.ap-southeast-2.amazonaws.com/javaprint
+
 docker push <AWS a/c ID>.dkr.ecr.ap-southeast-2.amazonaws.com/javaprint
+
 docker build -t javaawscli -f Dockerfile1 .
+
 docker image ls --> Check image ID of javaawscli, say its bnmcx
+
 docker tag bnmcx <AWS a/c ID>.dkr.ecr.ap-southeast-2.amazonaws.com/javaawscli
+
 docker push <AWS a/c ID>.dkr.ecr.ap-southeast-2.amazonaws.com/javaawscli
 
 #Creating AWS Batch Job
